@@ -22,7 +22,6 @@ session_start();
 
     if($consultarUsuario->estado != "OK"){
         $insertarRegistroBD = new Registro();
-
         $insertarRegistroBD->registro_usuario($usuario,$contraseña,$primer_nombre,$segundo_nombre,$primer_apellido,$segundo_apellido,$email);
         $_SESSION['mensaje'] = "Registro exitoso del usuario [<strong>$usuario</strong>]. Por favor inicie sesion <a href='ingresar.php'>Ingresar</a>";
         $_SESSION['login'] = "no";
