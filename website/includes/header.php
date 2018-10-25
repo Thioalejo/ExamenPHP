@@ -64,7 +64,7 @@ require ('includes/clases.php');
                 ?>
 
                 <?php 
-                 if($_SESSION['login'] == "si"){
+                 if(isset($_SESSION['login']) && $_SESSION['login'] == "si"){
                 ?>
                     <li class="<?php if ($Page =='adminuser'){ echo 'active';} ?>"><a href="adminuser.php">Administrar Usuarios</a></li>
                     <li><a href="salir.php">Salir</a></li>
