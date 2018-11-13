@@ -23,7 +23,7 @@
             $_SESSION['error'] = "No se ha podido enviar el mensaje";
         }
         else{
-            $_SESSION['error'] = "Se ha enviado correctamente su mensaje, nos pondremos en contacto con usted!";
+            $_SESSION['mensaje'] = "Se ha enviado correctamente su mensaje, nos pondremos en contacto con usted!";
         }
         $_SESSION['login'] = "no";
 

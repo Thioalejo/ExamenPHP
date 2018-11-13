@@ -91,8 +91,7 @@ require 'connection.php';
 
 		function registrar_contacto($Nombre,$Apellido,$Email,$Telefono,$Asunto,$Mensaje){
 			//$db = new Connection();
-			$time = time();
-			$Fecha_Hora = date("d-m-Y (H:i:s)", $time);
+			$Fecha_Hora = date("d-m-Y") ." ". date ("h:i:s");
 			$sql = ("INSERT INTO `contacto`(`Nombre`, `Apellido`, `Email`, `Telefono`, `Asunto`, `Mensaje`, `Fecha_Hora`) 
 									VALUES ('$Nombre', '$Apellido', '$Email', '$Telefono', '$Asunto', '$Mensaje', '$Fecha_Hora')");
 			$stmt = $this->db->query($sql);
