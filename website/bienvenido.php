@@ -9,7 +9,7 @@ include ('includes/header.php');
     <div class="jumbotron">
       <div class="container container text-center">
         <h1>Bienvenido <?php echo $usuario ?></h1>
-        <p>Usted ha ingresado como administrador</p>
+        <p>Usted ha ingresado como administrador :D</p>
       </div>
     </div>
 
