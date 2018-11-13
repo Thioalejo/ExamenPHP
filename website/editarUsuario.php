@@ -15,7 +15,7 @@
     $rol = $_POST['rol'];
 
 
-    $_SESSION['usuario'] = $usuario;
+    //$_SESSION['usuario'] = $usuario;
 
     //Validar usuario
     $consultarUsuario = new Registro();
@@ -25,7 +25,7 @@
     if($consultarUsuario->estado == "OK" && $rol !="" ){
         $insertarRegistroBD = new Registro();
         $insertarRegistroBD->actualizar_usuario($usuario,$contraseña,$primer_nombre,$segundo_nombre,$primer_apellido,$segundo_apellido,$email,$rol);
-        $_SESSION['tipousuario'] = $rol;         
+        //$_SESSION['tipousuario'] = $rol;         
     }  
 
 
