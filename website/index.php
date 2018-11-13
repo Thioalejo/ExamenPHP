@@ -17,7 +17,5 @@ include ('includes/header.php');
     </div>
 
 <?php
-$Fecha_Hora = date("d-m-Y") ." ". date ("h:i:s");
-echo $Fecha_Hora;
 include ('includes/footer.php');
 ?>
