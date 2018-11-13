@@ -61,6 +61,33 @@ require 'connection.php';
 			    return $this->stmt = "Error";
 			}			
 		}
+		function actualizar_usuario($usuario,$contraseña,$primer_nombre,$segundo_nombre,$primer_apellido,$segundo_apellido,$email,$rol){
+			//$db = new Connection();
+			$sql = ("UPDATE `registro` SET `usuario`= '$usuario' , `contraseña`= '$contraseña' , `primer_nombre` = '$primer_nombre' , `segundo_nombre` ='$segundo_nombre' , `primer_apellido`= '$primer_apellido' , `segundo_apellido`= '$segundo_apellido' , `rol`= '$rol' WHERE `email` = '$email'");
+			$stmt = $this->db->query($sql);
+	        
+	        var_dump($stmt);
+
+			//Validamos si la sentencia se ejecutó.
+			if ($stmt) {
+			    $this->estado = "OK";
+			} else {
+			    $this->estado = "Error";
+			}
+
+			return $this->estado;
+		}
+		function borrarUsuario($email){
+			$sql = ("DELETE FROM `registro` WHERE `email` = '$email'");
+			$stmt = $this->db->query($sql);
+			
+			if ($stmt) {
+			    $this->estado = "OK";
+			} else {
+			    $this->estado = "Error";
+			}
+			return $this->estado;
+		}
 	}	
 
 

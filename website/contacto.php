@@ -15,7 +15,7 @@
 <div  class="container text-center">
  <p>
  	<h2>Envianos tus comentarios o inquietudes</h2>
- </p> 
+ </p>
 </div>
 
 <div class="container">

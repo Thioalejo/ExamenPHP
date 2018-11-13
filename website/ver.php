@@ -12,8 +12,8 @@ $id = $_GET['id'];
 // $usuario = $loginUsuario->loginUsuario($id);
 
   
-$Page_Title = 'Editar Usuarios';
-$Page = 'Editar';
+$Page_Title = 'Ver Usuarios';
+$Page = 'Ver';
 include ('includes/header.php');
 
 //print_r($_SESSION['consulta']);
@@ -25,7 +25,7 @@ include ('includes/header.php');
 <div class="jumbotron">
 <div  class="container text-center">
  <p>
- 	<h2>Editar Usuario</h2>
+ 	<h2>Ver Usuario</h2>
  </p> 
 </div>
 
@@ -39,42 +39,42 @@ include ('includes/header.php');
 							<span class="input-group-addon">
 								<span class="glyphicon glyphicon-user"></span>	
 							</span>		
-									<input  class="form-control" id="user" name="user" type="text" value="<?php echo $row['usuario']; ?>" placeholder="Usuario" required="true" >		
+									<input  class="form-control" id="user" name="user" type="text" value="<?php echo $row['usuario']; ?>" placeholder="Usuario" required="true" disabled>		
 						</div>	
 
 						<div class="input-group">
 							<span class="input-group-addon">
 								<span class="glyphicon glyphicon-lock"></span>
 							</span>		
-									<input class="form-control" id="password" name="password" type="password" value="<?php echo $row['contraseña']; ?>" placeholder="Contraseña" required="true" >			
+									<input class="form-control" id="password" name="password" type="password" value="<?php echo $row['contraseña']; ?>" placeholder="Contraseña" required="true" disabled>			
 						</div>	
 
 						<div class="input-group">
 							<span class="input-group-addon">
 								<span class="glyphicon glyphicon-edit"></span>
 							</span>			
-									<input class="form-control" id="firstname" name="firstname" type="text" value="<?php echo $row['primer_nombre']; ?>" placeholder="Primer Nombre" required="true" >		
+									<input class="form-control" id="firstname" name="firstname" type="text" value="<?php echo $row['primer_nombre']; ?>" placeholder="Primer Nombre" required="true" disabled>		
 						</div>		
 
 						<div class="input-group">
 							<span class="input-group-addon">
 								<span class="glyphicon glyphicon-edit"></span>
 							</span>			
-									<input class="form-control" id="secondname" name="secondname" type="text" value="<?php echo $row['segundo_nombre']; ?>" placeholder="Segundo Nombre" required="true">		
+									<input class="form-control" id="secondname" name="secondname" type="text" value="<?php echo $row['segundo_nombre']; ?>" placeholder="Segundo Nombre" required="true" disabled>		
 						</div>	
 
 						<div class="input-group">
 							<span class="input-group-addon">
 								<span class="glyphicon glyphicon-edit"></span>
 							</span>			
-									<input class="form-control" id="lastname1" name="lastname1" type="text" value="<?php echo $row['primer_apellido']; ?>" placeholder="Primer Apellido" required="true">		
+									<input class="form-control" id="lastname1" name="lastname1" type="text" value="<?php echo $row['primer_apellido']; ?>" placeholder="Primer Apellido" required="true" disabled>		
 						</div>		
 
 						<div class="input-group">
 							<span class="input-group-addon">
 								<span class="glyphicon glyphicon-edit"></span>
 							</span>			
-									<input class="form-control" id="lastname2" name="lastname2" type="text" value="<?php echo $row['segundo_apellido']; ?>" placeholder="Segundo Apellido" required="true">		
+									<input class="form-control" id="lastname2" name="lastname2" type="text" value="<?php echo $row['segundo_apellido']; ?>" placeholder="Segundo Apellido" required="true" disabled>		
 						</div>	
 
 						<div class="input-group">
@@ -82,21 +82,20 @@ include ('includes/header.php');
 								<span class="glyphicon glyphicon-envelope"></span>
 							</span>			
 									<input class="form-control" id="email1" name="email1" type="email" value="<?php echo $row['email']; ?>" placeholder="Email" disabled>									
-						</div>
-						<input class="form-control" name="email" type="email" value="<?php echo $row['email']; ?>" placeholder="Email" style="display: none;">
+						</div>						
 					
 					<?php if($_SESSION['tipousuario'] == "admin"){ ?>
 						<div class="input-group">
 							<span class="input-group-addon">
 								<span class="glyphicon glyphicon-user"></span>	
 							</span>		
-									<input  class="form-control" id="rol" name="rol" type="text" value="<?php echo $row['rol']; ?>" placeholder="user o admin" required="true" >		
+									<input  class="form-control" id="rol" name="rol" type="text" value="<?php echo $row['rol']; ?>" placeholder="user o admin" required="true" disabled>		
 						</div>
 					<?php } ?>
 				<?php } ?>		
 			<?php endforeach ?>
 					<button type="submit" class="btn btn-default btn-block">
-					  <span class="glyphicon glyphicon-send"></span> Modificar 
+					  <a href='adminuser.php'>Regresar</a> 
 					</button>
 
 					</form>

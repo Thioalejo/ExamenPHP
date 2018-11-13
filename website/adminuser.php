@@ -32,10 +32,10 @@
 				<div class="post">
 					<article>
 						<h2 class="titulo"><?php echo $row['usuario'].' - '.$row['rol']; ?></h2>						
-						<a href="ver.php?id=<?php echo $row['email']; ?>">Ver</a>
+						<a class="text-success" href="ver.php?id=<?php echo $row['email']; ?>">Ver</a>
 						<?php if($_SESSION['tipousuario'] == "admin"){ ?>
-							<a href="modificar.php?id=<?php echo $row['email']; ?>">| Editar |</a>
-							<a href="borrar.php?id=<?php echo $row['email']; ?>">Borrar </a>
+							<a class="text-warning" href="modificar.php?id=<?php echo $row['email']; ?>">| Editar |</a>
+							<a class="text-danger" href="borrar.php?id=<?php echo $row['email']; ?>">Borrar </a>
 						<?php } ?>
 					</article>
 				</div>

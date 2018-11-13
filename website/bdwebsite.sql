@@ -21,19 +21,21 @@ USE `dbwebsite`;
 DROP TABLE IF EXISTS `registro`;
 
 CREATE TABLE `registro` (
-  `usuario` varchar(20) NOT NULL,
+  `usuario` varchar(30) NOT NULL,
   `contraseña` varchar(20) NOT NULL,
   `primer_nombre` varchar(50) NOT NULL,
   `segundo_nombre` varchar(50) DEFAULT NULL,
   `primer_apellido` varchar(50) NOT NULL,
   `segundo_apellido` varchar(50) DEFAULT NULL,
   `email` varchar(50) NOT NULL,
+  `fecha` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  `rol` varchar(10) DEFAULT 'user',
   PRIMARY KEY (`email`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 /*Data for the table `registro` */
 
-insert  into `registro`(`usuario`,`contraseña`,`primer_nombre`,`segundo_nombre`,`primer_apellido`,`segundo_apellido`,`email`) values ('Thioalejo','alejo','Johnny','Alejandro','Martinez','Saraza','0@gmail.com'),('Thioalejo','alejo','Johnny','Alejandro','Martinez','Saraza','100@gmail.com'),('Thioalejo','alejo','Johnny','Alejandro','Martinez','Saraza','101@gmail.com'),('Thioalejo','alejo','Johnny','Alejandro','Martinez','Saraza','10@gmail.com'),('Thioalejo','alejo','Johnny','Alejandro','Martinez','Saraza','15@gmail.com'),('Thioalejo','alejo','Johnny','Alejandro','Martinez','Saraza','1@gmail.com'),('Thioalejo','alejo','Johnny','Alejandro','Martinez','Saraza','200@gmail.com'),('Thioalejo','alejo','Johnny','Alejandro','Martinez','Saraza','203@gmail.com'),('Thioalejo','alejo','Johnny','Alejandro','Martinez','Saraza','21@gmail.com'),('Thioalejo','alejo','Johnny','Alejandro','Martinez','Saraza','2@gmail.com'),('Thioalejo','alejo','Johnny','Alejandro','Martinez','Saraza','300@gmail.com'),('Thioalejo','alejo','Johnny','Alejandro','Martinez','Saraza','30@gmail.com'),('Thioalejo','alejo','Johnny','Alejandro','Martinez','Saraza','31@gmail.com'),('Thioalejo','alejo','Johnny','Alejandro','Martinez','Saraza','35@gmail.com'),('Thioalejo','alejo','Johnny','Alejandro','Martinez','Saraza','3@gmail.com'),('Thioalejo','alejo','Johnny','Alejandro','Martinez','Saraza','52@gmail.com'),('Thioalejo','alejo','Johnny','Alejandro','Martinez','Saraza','5@gmail.com'),('Thioalejo','alejo','Johnny','Alejandro','Martinez','Saraza','60@gmail.com'),('Thioalejo','alejo','Johnny','Alejandro','Martinez','Saraza','8@gmail.com'),('Thioalejo','alejo','Johnny','Alejandro','Martinez','Saraza','9@gmail.com'),('Thioalejo','alejo','Johnny','Alejandro','Martinez','Saraza','alejo.saraza@gmail.com'),('Thioalejo','alejo','Johnny','Alejandro','Martinez','Saraza','alejosaraza@gmail.com'),('Thioalejo','alejo','Johnny','Alejandro','Martinez','Saraza','araza@gmail.com');
+insert  into `registro`(`usuario`,`contraseña`,`primer_nombre`,`segundo_nombre`,`primer_apellido`,`segundo_apellido`,`email`,`fecha`,`rol`) values ('j3','123','alejo','alejo','alejo','alejo','alejo1@gmail.com','2018-11-13 12:04:41','admin'),('alejo','1123','alejandro','jhonny','sanchez','botero','alejo@hotmail.com','2018-11-13 12:00:22','user'),('j2','123','david','david','david','david','david@gmail.com','2018-11-13 12:04:08','user'),('j1','123','monica','monica','monica','monica','monica@gmail.com','2018-11-13 12:03:27','user');
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
