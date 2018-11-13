@@ -1,5 +1,6 @@
 <?php
-
+session_start();
+session_destroy();
 $Page_Title = 'Ingreso de Usuarios';
 $Page = 'ingreso';
 include ('includes/header.php');

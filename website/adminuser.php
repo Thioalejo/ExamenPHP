@@ -11,6 +11,10 @@
 	$consultar = new Registro();
 	$usuarios = $consultar->consultarTodo();
 
+	$_SESSION['consulta'] = $usuarios;
+
+	print_r($_SESSION['tipousuario'])
+
 ?>
 
     <!-- Main jumbotron for a primary marketing message or call to action -->
@@ -24,19 +28,18 @@
 <div class="container">
 	<p class="text-center">
 		<div>
-			<?php
-
-			 $longitud = count($usuarios);
-				for($i=0; $i<$longitud; $i++) {
-					echo '<div> <ul style="float: left;">';
-					echo '<h3>Usuario '.$i.'</h3>';
-					$longitud1 = count($usuarios[$i]);
-					for($j=0; $j<$longitud1; $j++) {		    
-					    echo '<tr>'.$usuarios[$i][$j].'</tr> <br>';		    
-					}
-					echo '</ul></div>';
-				}
-			 ?>
+			 <?php foreach ($usuarios as $row): ?>
+				<div class="post">
+					<article>
+						<h2 class="titulo"><?php echo $row['usuario'].' - '.$row['rol']; ?></h2>						
+						<a href="ver.php?id=<?php echo $row['email']; ?>">Ver</a>
+						<?php if($_SESSION['tipousuario'] == "admin"){ ?>
+							<a href="modificar.php?id=<?php echo $row['email']; ?>">| Editar |</a>
+							<a href="borrar.php?id=<?php echo $row['email']; ?>">Borrar </a>
+						<?php } ?>
+					</article>
+				</div>
+			<?php endforeach ?>
 		 </div>
 	</p>
 </div>	

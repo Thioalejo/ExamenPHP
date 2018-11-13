@@ -22,6 +22,9 @@ require ('includes/clases.php');
         <link rel="apple-touch-icon" href="apple-touch-icon.png">
 
         <link rel="stylesheet" href="css/bootstrap.min.css">
+
+
+
         <style>
             body {
                 padding-top: 50px;
@@ -52,7 +55,7 @@ require ('includes/clases.php');
                 <li class="<?php if ($Page =='productos'){ echo 'active';} ?>"><a href="">Productos</a></li>
                 <li class="<?php if ($Page =='ofertas'){ echo 'active';} ?>"><a href="#">Ofertas</a></li>
                 <li class="<?php if ($Page =='servicios'){ echo 'active';} ?>"><a href="#">Servicios</a></li>
-                <li class="<?php if ($Page =='contacto'){ echo 'active';} ?>"><a href="#">Contacto</a></li>
+                <li class="<?php if ($Page =='contacto'){ echo 'active';} ?>"><a href="contacto.php">Contacto</a></li>
                  
                 <?php 
                  if(!isset($_SESSION['login']) || $_SESSION['login'] == "no" || empty($_SESSION['login'])){

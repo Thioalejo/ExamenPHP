@@ -1,5 +1,6 @@
 <?php
-include 'connection.php';
+require 'connection.php';
+
   class Registro {
 		public $estado;
 	    function __construct() {
@@ -9,7 +10,8 @@ include 'connection.php';
 
 		function registro_usuario($usuario,$contraseña,$primer_nombre,$segundo_nombre,$primer_apellido,$segundo_apellido,$email){
 			//$db = new Connection();
-			$sql = ("INSERT INTO `registro`(`usuario`, `contraseña`, `primer_nombre`, `segundo_nombre`, `primer_apellido`, `segundo_apellido`, `email`) VALUES ('$usuario', '$contraseña', '$primer_nombre', '$segundo_nombre', '$primer_apellido', '$segundo_apellido', '$email')");
+			$sql = ("INSERT INTO `registro`(`usuario`, `contraseña`, `primer_nombre`, `segundo_nombre`, `primer_apellido`, `segundo_apellido`, `email`) 
+									VALUES ('$usuario', '$contraseña', '$primer_nombre', '$segundo_nombre', '$primer_apellido', '$segundo_apellido', '$email')");
 			$stmt = $this->db->query($sql);
 	            
 
@@ -22,7 +24,6 @@ include 'connection.php';
 
 			return $this->estado;
 		}
-		
 		function consultarUsuario($email){
 			$sql = ("SELECT * FROM registro WHERE email = '$email' LIMIT 1");
 			$stmt = $this->db->query($sql);
@@ -51,7 +52,7 @@ include 'connection.php';
 		function consultarTodo(){
 			$sql = ("SELECT * FROM registro");
 			$stmt = $this->db->query($sql);
-			$stmt = $stmt->fetch_all();
+			$stmt = $stmt->fetch_all(MYSQLI_ASSOC);
 
 			
 			if ($stmt) {

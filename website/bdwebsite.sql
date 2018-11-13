@@ -2,8 +2,7 @@
 SQLyog Ultimate v11.11 (64 bit)
 MySQL - 5.5.5-10.1.34-MariaDB : Database - dbwebsite
 *********************************************************************
-*/
-
+*/
 
 /*!40101 SET NAMES utf8 */;
 
@@ -23,7 +22,7 @@ DROP TABLE IF EXISTS `registro`;
 
 CREATE TABLE `registro` (
   `usuario` varchar(20) NOT NULL,
-  `contraseña` varchar(250) NOT NULL,
+  `contraseña` varchar(20) NOT NULL,
   `primer_nombre` varchar(50) NOT NULL,
   `segundo_nombre` varchar(50) DEFAULT NULL,
   `primer_apellido` varchar(50) NOT NULL,
