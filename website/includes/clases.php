@@ -88,6 +88,24 @@ require 'connection.php';
 			}
 			return $this->estado;
 		}
+
+		function registrar_contacto($Nombre,$Apellido,$Email,$Telefono,$Asunto,$Mensaje){
+			//$db = new Connection();
+			$Fecha_Hora = date("d-m-Y") ." ". date ("h:i:s");
+			$sql = ("INSERT INTO `contacto`(`Nombre`, `Apellido`, `Email`, `Telefono`, `Asunto`, `Mensaje`, `Fecha_Hora`) 
+									VALUES ('$Nombre', '$Apellido', '$Email', '$Telefono', '$Asunto', '$Mensaje', '$Fecha_Hora')");
+			$stmt = $this->db->query($sql);
+	            
+
+			//Validamos si la sentencia se ejecutó.
+			if ($stmt) {
+			    $this->estado = "OK";
+			} else {
+			    $this->estado = "Error";
+			}
+
+			return $this->estado;
+		}
 	}	
 
 

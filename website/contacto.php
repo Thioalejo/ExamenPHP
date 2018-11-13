@@ -20,7 +20,7 @@
 
 <div class="container">
 	<?php if (empty($_SESSION['mensaje'])): ?>
-		<form action='registrarUsuario.php' method='post'>
+		<form action='registrarContacto.php' method='post'>
 
 				
 
@@ -65,7 +65,7 @@
 							<span class="input-group-addon">
 								<span class="glyphicon glyphicon-edit"></span>
 							</span>			
-									<textarea class="form-control" id="messa" name="subjet" type="text" placeholder="Asunto" required="true" required="true"></textarea> 		
+									<textarea class="form-control" id="messa" name="message" type="text" placeholder="Mensaje" required="true" required="true"></textarea> 		
 						</div>
 
 
