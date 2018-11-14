@@ -69,7 +69,7 @@ include ('includes/header.php');
 							<span class="input-group-addon">
 								<span class="glyphicon glyphicon-envelope"></span>
 							</span>			
-									<input class="form-control" id="email" name="email" type="email" placeholder="Email" required="true" required="true">	
+									<input class="form-control" id="email" name="email" type="email" placeholder="Email(para iniciar sesion)" required="true">	
 						</div>		
 
 					<button type="submit" class="btn btn-default btn-block">

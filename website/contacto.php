@@ -28,7 +28,7 @@
 							<span class="input-group-addon">
 								<span class="glyphicon glyphicon-user"></span>
 							</span>			
-									<input class="form-control" id="firstname" name="firstname" type="text" placeholder="Nombre(s)" required="true" required="true">		
+									<input class="form-control" id="firstname" name="firstname" type="text" placeholder="Nombre(s)" required="true" >		
 						</div>		
 						
 
@@ -36,7 +36,7 @@
 							<span class="input-group-addon">
 								<span class="glyphicon glyphicon-user"></span>
 							</span>			
-									<input class="form-control" id="lastname1" name="lastname1" type="text" placeholder="Apellido(s)" required="true" required="true">		
+									<input class="form-control" id="lastname1" name="lastname1" type="text" placeholder="Apellido(s)" required="true" >		
 						</div>	
 
 						
@@ -44,28 +44,28 @@
 							<span class="input-group-addon">
 								<span class="glyphicon glyphicon-envelope"></span>
 							</span>			
-									<input class="form-control" id="email" name="email" type="email" placeholder="Email" required="true" required="true">	
+									<input class="form-control" id="email" name="email" type="email" placeholder="Email" required="true" >	
 						</div>	
 
 						<div class="input-group">
 							<span class="input-group-addon">
 								<span class="glyphicon glyphicon-phone"></span>
 							</span>			
-									<input class="form-control" id="phone" name="phone" type="text" placeholder="Telefono" required="true" required="true">		
+									<input class="form-control" id="phone" name="phone" type="text" placeholder="Telefono" required="true" >		
 						</div>
 
 						<div class="input-group">
 							<span class="input-group-addon">
 								<span class="glyphicon glyphicon-edit"></span>
 							</span>			
-									<input class="form-control" id="subjet" name="subjet" type="text" placeholder="Asunto" required="true" required="true">		
+									<input class="form-control" id="subjet" name="subjet" type="text" placeholder="Asunto" required="true" >		
 						</div>
 
 						<div class="input-group">
 							<span class="input-group-addon">
 								<span class="glyphicon glyphicon-edit"></span>
 							</span>			
-									<textarea class="form-control" id="messa" name="message" type="text" placeholder="Mensaje" required="true" required="true"></textarea> 		
+									<textarea class="form-control" id="messa" name="message" type="text" placeholder="Mensaje" required="true" ></textarea> 		
 						</div>
 
 

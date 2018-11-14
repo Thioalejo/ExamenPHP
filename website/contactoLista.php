@@ -34,7 +34,7 @@
 					<?php foreach ($contacto as $row): ?>
 						<div class="post">
 							<article>
-								<h2 class="titulo"><?php echo $row['Nombre'].' - '.$row['Apellido'].' - '.$row['Asunto'].' - '.$row['Fecha_Hora']; ?></h2>						
+								<h2 class="titulo"><?php echo $row['Nombre'].' '.$row['Apellido'].' - '.$row['Asunto'].' - '.$row['Fecha_Hora']; ?></h2>						
 								
 								<?php if($_SESSION['tipousuario'] == "admin"){ ?>
                                 

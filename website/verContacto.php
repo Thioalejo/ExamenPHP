@@ -38,7 +38,7 @@ include ('includes/header.php');
 					<?php if($_SESSION['tipousuario'] == "admin"){ ?>
 						
                         <div class="input-group">
-							<Label>Nombre: <?php echo $row['Nombre']; ?>" </Label>
+							<Label>Nombre: <?php echo $row['Nombre']; ?> </Label>
 											
 						    </div>	
                         
