@@ -45,7 +45,7 @@ CREATE TABLE `contacto` (
 
 INSERT INTO `contacto` (`idContacto`, `Nombre`, `Apellido`, `Email`, `Telefono`, `Asunto`, `Mensaje`, `Fecha_Hora`) VALUES
 (1, 'johnny', 'Martinez', 'alejo.saraza2@gmail.com', '5842345', 'Quiero trabajar con ustedes', 'Mensaje', '13-11-2018 (19:06:14)'),
-(2, 'alejandro', 'Saraza', 'alejo.saraza3@gmail.com', '5842345', 'Quiero trabajar con ustedes', 'a', '13-11-2018 (19:11:27)'),
+(2, 'alejandro', 'Saraza', 'alejo.saraza3@gmail.com', '5842345', 'Quiero trabajar con ustedes', 'a', '11-11-2018 (19:11:27)'),
 (3, 'david', 'Piedrahita', 'david@gmail.com', '5842345', 'Quiero trabajar con ustedes', 'ass', '13-11-2018 (19:12:39)');
 
 -- --------------------------------------------------------
