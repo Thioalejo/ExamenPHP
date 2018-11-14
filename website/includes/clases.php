@@ -106,6 +106,21 @@ require 'connection.php';
 
 			return $this->estado;
 		}
+
+		function consultarTodoContacto(){
+			$sql = ("SELECT * FROM `contacto` ORDER BY Fecha_Hora ASC");
+			$stmt = $this->db->query($sql);
+			$stmt = $stmt->fetch_all(MYSQLI_ASSOC);
+
+			
+			if ($stmt) {
+			    return $this->stmt = $stmt;
+			} else {
+			    return $this->stmt = "Error";
+			}			
+		}
+		
+
 	}	
 
 

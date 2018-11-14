@@ -55,7 +55,14 @@ require ('includes/clases.php');
                 <li class="<?php if ($Page =='productos'){ echo 'active';} ?>"><a href="">Productos</a></li>
                 <li class="<?php if ($Page =='ofertas'){ echo 'active';} ?>"><a href="#">Ofertas</a></li>
                 <li class="<?php if ($Page =='servicios'){ echo 'active';} ?>"><a href="#">Servicios</a></li>
+                <?php 
+                 if(!isset($_SESSION['login']) || $_SESSION['login'] == "no" || empty($_SESSION['login'])){
+                ?>
                 <li class="<?php if ($Page =='contacto'){ echo 'active';} ?>"><a href="contacto.php">Contacto</a></li>
+                <?php
+                }
+                ?>
+                
                  
                 <?php 
                  if(!isset($_SESSION['login']) || $_SESSION['login'] == "no" || empty($_SESSION['login'])){
@@ -69,6 +76,7 @@ require ('includes/clases.php');
                 <?php 
                  if(isset($_SESSION['login']) && $_SESSION['login'] == "si"){
                 ?>
+                    <li class="<?php if ($Page =='listacontacto'){ echo 'active';} ?>"><a href="contactoLista.php">Lista de Contacto</a></li>
                     <li class="<?php if ($Page =='adminuser'){ echo 'active';} ?>"><a href="adminuser.php">Administrar Usuarios</a></li>
                     <li><a href="salir.php">Salir</a></li>
                     <li><a href="#"> <?php echo $_SESSION['usuario']; ?></a></li>
