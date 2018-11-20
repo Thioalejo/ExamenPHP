@@ -132,7 +132,35 @@ require 'connection.php';
 			    return $this->stmt = "Error";
 			}			
 		}
-		
+		function consultarIdProducto($id){
+			$sql = ("SELECT * FROM productos WHERE id = '$id' LIMIT 1");
+			$stmt = $this->db->query($sql);
+			$stmt = $stmt->fetch_array(MYSQLI_ASSOC);
+
+			
+			if ($stmt) {
+			    $this->estado = $stmt;
+			} else {
+			    $this->estado = "Error";
+			}
+			return $this->estado;
+		}
+		function agregarCarrito($id_producto,$cantidad,$precio,$estado,$usuario,$creado){
+			//$db = new Connection();
+			$sql = ("INSERT INTO `carro`(`id_producto`, `cantidad`, `precio`, `estado`, `usuario`, `creado`) 
+									VALUES ('$id_producto', '$cantidad', '$precio', '$estado', '$usuario', '$creado')");
+			$stmt = $this->db->query($sql);
+	            
+
+			//Validamos si la sentencia se ejecutó.
+			if ($stmt) {
+			    $this->estado = "OK";
+			} else {
+			    $this->estado = "Error";
+			}
+
+			return $this->estado;
+		}
 
 	}	
 

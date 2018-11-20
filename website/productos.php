@@ -46,7 +46,7 @@ $_SESSION['productos'] = $productos;
 	      <td><?php echo $row['precio'] ?></td>
 	      <td><?php echo $row['cantidad'] ?></td>
 	      <td><input class="numero" type="text" placeholder="<?php echo '1'.'-'.$row['cantidad'] ?>"></td>
-	      <td><button class="btn btn-success" onclick="myFunction()" href="agregarCarrito.php?id=<?php echo $row['id']; ?>">Agregar</button></td>
+	      <td><a class="btn btn-success" href="agregarCarrito.php?id=<?php echo $row['id']; ?>">Agregar</a></td>
 	    </tr>
 	  <?php endforeach ?>	    
 	  </tbody>
