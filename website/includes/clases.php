@@ -119,6 +119,19 @@ require 'connection.php';
 			    return $this->stmt = "Error";
 			}			
 		}
+
+		function consultarProductos(){
+			$sql = ("SELECT * FROM productos");
+			$stmt = $this->db->query($sql);
+			$stmt = $stmt->fetch_all(MYSQLI_ASSOC);
+
+			
+			if ($stmt) {
+			    return $this->stmt = $stmt;
+			} else {
+			    return $this->stmt = "Error";
+			}			
+		}
 		
 
 	}	

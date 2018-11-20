@@ -52,7 +52,7 @@ require ('includes/clases.php');
             <ul class="nav navbar-nav">
                 <li class="<?php if ($Page =='inicio'){ echo 'active';} ?>"><a href="index.php">Inicio</a></li>
                 <li class="<?php if ($Page =='nosotros'){ echo 'active';} ?>"><a href="#">Nosotros</a></li>
-                <li class="<?php if ($Page =='productos'){ echo 'active';} ?>"><a href="">Productos</a></li>
+                <li class="<?php if ($Page =='productos'){ echo 'active';} ?>"><a href="productos.php">Productos</a></li>
                 <li class="<?php if ($Page =='ofertas'){ echo 'active';} ?>"><a href="#">Ofertas</a></li>
                 <li class="<?php if ($Page =='servicios'){ echo 'active';} ?>"><a href="#">Servicios</a></li>
                 <?php 
