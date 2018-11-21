@@ -12,13 +12,13 @@
 	$consultar = new Registro();
 	$carrito = $consultar->consultarCarrito($_SESSION['usuario']);
 
-
-	foreach ($carrito as $value) {
-		//print_r($value['id_producto']);
-		$producCarrito[] = $consultar->consultarProductoCarrito($value['id_producto']);		
+	if($carrito != "Error"){
+		foreach ($carrito as $value) {
+			//print_r($value['id_producto']);
+			$producCarrito[] = $consultar->consultarProductoCarrito($value['id_producto']);		
+		}
 	}
-
-	//print_r($carrito);
+	//print_r($producCarrito);
 	//print_r($_SESSION['usuario']);
 
 ?>
@@ -31,7 +31,12 @@
 	.numero{
 	    width: 60px;	
 	}
+	.mensaje{
+		text-align: center;
+    	color: green;
+	}
 </style>
+<?php if($_SESSION['carrito']>0 && isset($producCarrito)){ ?>
 <div class="producto">
 	<table class="table">
 	  <thead class="thead-dark"> 
@@ -57,7 +62,7 @@
 		      		<td><?php echo $fila['cantidad']; $totalproductos += $fila['cantidad']; ?></td>
 				<?php } ?>
 		      <?php endforeach ?>
-		      <td><a class="btn btn-success" href="eliminarcarrito.php?id=<?php echo $row['id']; ?>">Eliminar</a></td>
+		      <td><a class="btn btn-success" href="eliminarcarrito.php?id=<?php echo $row['id'];?>&user=<?php echo $_SESSION['usuario']; ?>">Eliminar</a></td>
 	  	  </form>
 	    </tr>	    
 	  <?php endforeach ?>
@@ -72,6 +77,12 @@
 	} 
 	?> 
 </div>
+
+<?php }else{ ?>
+	<div class="mensaje">
+		<h3>No tienes productos en el carrito.</h3>
+	</div>
+<?php } ?>
 
 <?php
 include ('includes/footer.php');

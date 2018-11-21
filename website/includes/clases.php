@@ -198,6 +198,17 @@ require 'connection.php';
 			}
 			return $this->estado;
 		}
+		function borrarCarrito($id,$usuario){
+			$sql = ("DELETE FROM `carro` WHERE `usuario` = '$usuario' AND `id_producto` = '$id'");
+			$stmt = $this->db->query($sql);
+			
+			if ($stmt) {
+			    $this->estado = "OK";
+			} else {
+			    $this->estado = "Error";
+			}
+			return $this->estado;
+		}
 
 
 	}	
