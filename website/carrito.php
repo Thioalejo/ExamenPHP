@@ -53,10 +53,10 @@
 	      <form action='agregarCarrito.php?id=<?php echo $row['id']; ?>' method='post'>
 		      <th scope="row"><?php echo $row['id'] ?></th>
 		      <td><?php echo $row['nombre'] ?></td>
-		      <td><?php echo $row['descripcion'] ?></td>
-		      <td><?php echo $row['precio'];  $total += $row['precio']; ?></td>
+		      <td><?php echo $row['descripcion'] ?></td>		      
 		      <?php foreach ($carrito as $fila): ?>
 				<?php if($row['id'] == $fila['id_producto']){ ?>
+					<td><?php echo $row['precio'];  $total += $row['precio']*$fila['cantidad']; ?></td>
 		      		<td><?php echo $fila['cantidad']; $totalproductos += $fila['cantidad']; ?></td>
 				<?php } ?>
 		      <?php endforeach ?>
@@ -66,8 +66,11 @@
 	  <?php endforeach ?>
 	  </tbody>	  
 	</table>
-	<h4> <?php echo "Cantidad de productos: $totalproductos"; ?></h4>
-	<h4> <?php echo "El precio total es pagar es: $total"; ?></h4> 
+	<div>
+		<h4> <?php echo "Cantidad de productos: $totalproductos"; ?></h4>
+		<h4> <?php echo "El precio total es pagar es: $total"; ?></h4>
+		<a class="btn btn-success" href="comprar.php?user=<?php echo $_SESSION['usuario']; ?>">Pagar</a>
+	</div>
 	<?php 
 	$carritoprod = $consultar->productosCarrito($_SESSION['usuario']);
 	if($carritoprod){

@@ -34,7 +34,9 @@ $_SESSION['productos'] = $productos;
 	      <th scope="col">Descripcion</th>
 	      <th scope="col">Precio</th>
 	      <th scope="col">Disponible</th>
-	      <th scope="col">Cantidad</th>
+	      <?php if(isset($_SESSION['usuario'])){?>
+	      	<th scope="col">Cantidad</th>
+	      <?php } ?>
 	    </tr>
 	  </thead>
 	  <?php foreach ($productos as $row): ?>
@@ -44,10 +46,12 @@ $_SESSION['productos'] = $productos;
 		      <th scope="row"><?php echo $row['id'] ?></th>
 		      <td><?php echo $row['nombre'] ?></td>
 		      <td><?php echo $row['descripcion'] ?></td>
-		      <td><?php echo $row['precio'] ?></td>
-		      <td><?php echo $row['cantidad'] ?></td>
-		      <td><input class="numero" name="cantidad" type="number" placeholder="<?php echo '1'.'-'.$row['cantidad'] ?>"></td>
-		      <td><button type="submit" class="btn btn-success">Agregar</button></td>
+		      <td><?php echo $row['precio'] ?></td>		      
+			  <td><?php echo $row['cantidad'] ?></td>
+			  <?php if(isset($_SESSION['usuario'])){?>
+			      <td><input class="numero" name="cantidad" type="number" placeholder="<?php echo '1'.'-'.$row['cantidad'] ?>"></td>
+			      <td><button type="submit" class="btn btn-success">Agregar</button></td>
+		      <?php } ?>
 	  	  </form>
 	    </tr>
 	  <?php endforeach ?>	    
