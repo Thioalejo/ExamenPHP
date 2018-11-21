@@ -47,17 +47,7 @@ $_SESSION['productos'] = $productos;
 		      <td><?php echo $row['precio'] ?></td>
 		      <td><?php echo $row['cantidad'] ?></td>
 		      <td><input class="numero" name="cantidad" type="number" placeholder="<?php echo '1'.'-'.$row['cantidad'] ?>"></td>
-		      <?php if($_SESSION['carrito']!=null)
-					{
-						?>
-							<td><button type="submit" class="btn btn-success">Agregado</button></td>
-								
-							<?php
-							$_SESSION['carrito'] = null;
-					}else{
-						?>
 		      <td><button type="submit" class="btn btn-success">Agregar</button></td>
-				<?php } ?>
 	  	  </form>
 	    </tr>
 	  <?php endforeach ?>	    

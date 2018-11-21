@@ -14,12 +14,10 @@
 
 	if($carrito != "Error"){
 		foreach ($carrito as $value) {
-			//print_r($value['id_producto']);
 			$producCarrito[] = $consultar->consultarProductoCarrito($value['id_producto']);		
 		}
 	}
-	//print_r($producCarrito);
-	//print_r($_SESSION['usuario']);
+
 
 ?>
 <style type="text/css">
