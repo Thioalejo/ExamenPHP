@@ -5,6 +5,8 @@
     }
 
 require ('includes/clases.php'); 
+
+
 ?>
 
 
@@ -80,8 +82,8 @@ require ('includes/clases.php');
                     <li class="<?php if ($Page =='adminuser'){ echo 'active';} ?>"><a href="adminuser.php">Administrar Usuarios</a></li>
                     <li><a href="salir.php">Salir</a></li>
                     <li><a href="#"> <?php echo $_SESSION['usuario']; ?></a></li>
-                    <li style="width: 5%;"><a href="#"><img style="width: 100%;" src="https://www.casamarilla.cl/media/wysiwyg/iconos/carro-icono.png"></a></li>
-                    <li style=" margin-left: -26px;margin-top: -11px;"><a>(50)</a></li>
+                    <li style="width: 5%;"><a href="carrito.php"><img style="width: 100%;" src="https://www.casamarilla.cl/media/wysiwyg/iconos/carro-icono.png"></a></li>
+                    <li style=" margin-left: -26px;margin-top: -11px;"><a><?php if ($_SESSION['carrito']["total"]){ echo '('.($_SESSION['carrito']["total"]).')';} ?></a></li>
                 <?php
                 }
                 ?>              

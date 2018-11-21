@@ -161,6 +161,44 @@ require 'connection.php';
 
 			return $this->estado;
 		}
+		function consultarCarrito($usuario){
+			$sql = ("SELECT `id_producto`, SUM(`cantidad`) AS 'cantidad',SUM(`precio`) AS 'precio' FROM `carro` WHERE `usuario` = '$usuario' AND `estado` = 0 GROUP BY `id_producto`");
+			$stmt = $this->db->query($sql);
+			$stmt = $stmt->fetch_all(MYSQLI_ASSOC);
+			
+			if ($stmt) {
+			    $this->estado = $stmt;
+			} else {
+			    $this->estado = "Error";
+			}
+			return $this->estado;
+		}
+		function consultarProductoCarrito($id){
+			$sql = ("SELECT * FROM productos WHERE id = '$id' LIMIT 1");
+			$stmt = $this->db->query($sql);
+			$stmt = $stmt->fetch_array(MYSQLI_ASSOC);
+
+			
+			if ($stmt) {
+			    $this->estado = $stmt;
+			} else {
+			    $this->estado = "Error";
+			}
+			return $this->estado;
+		}
+		function productosCarrito($usuario){
+			$sql = ("SELECT SUM(`cantidad`) as 'total' FROM `carro` WHERE `usuario` = '$usuario' AND `estado` = 0");
+			$stmt = $this->db->query($sql);
+			$stmt = $stmt->fetch_array(MYSQLI_ASSOC);
+			
+			if ($stmt) {
+			    $this->estado = $stmt;
+			} else {
+			    $this->estado = "Error";
+			}
+			return $this->estado;
+		}
+
 
 	}	
 

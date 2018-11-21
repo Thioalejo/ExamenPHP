@@ -40,24 +40,20 @@ $_SESSION['productos'] = $productos;
 	  <?php foreach ($productos as $row): ?>
 	  <tbody>
 	    <tr>
-	      <th scope="row"><?php echo $row['id'] ?></th>
-	      <td><?php echo $row['nombre'] ?></td>
-	      <td><?php echo $row['descripcion'] ?></td>
-	      <td><?php echo $row['precio'] ?></td>
-	      <td><?php echo $row['cantidad'] ?></td>
-	      <td><input class="numero" type="text" placeholder="<?php echo '1'.'-'.$row['cantidad'] ?>"></td>
-	      <td><a class="btn btn-success" href="agregarCarrito.php?id=<?php echo $row['id']; ?>">Agregar</a></td>
+	      <form action='agregarCarrito.php?id=<?php echo $row['id']; ?>' method='post'>
+		      <th scope="row"><?php echo $row['id'] ?></th>
+		      <td><?php echo $row['nombre'] ?></td>
+		      <td><?php echo $row['descripcion'] ?></td>
+		      <td><?php echo $row['precio'] ?></td>
+		      <td><?php echo $row['cantidad'] ?></td>
+		      <td><input class="numero" name="cantidad" type="number" placeholder="<?php echo '1'.'-'.$row['cantidad'] ?>"></td>
+		      <td><button type="submit" class="btn btn-success">Agregar</button></td>
+	  	  </form>
 	    </tr>
 	  <?php endforeach ?>	    
 	  </tbody>
 	</table>
 </div>
-
-<script type="text/javascript">
-	myFunction(){
-		
-	}
-</script>
 
 <?php
 include ('includes/footer.php');

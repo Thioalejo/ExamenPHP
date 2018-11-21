@@ -15,6 +15,9 @@ if(!isset($_SESSION)){
     $loginUsuario = new Registro();
     $usuario = $loginUsuario->loginUsuario($email);
 
+
+    
+
     
 
 	  //var_dump($usuario);
@@ -22,7 +25,13 @@ if(!isset($_SESSION)){
 	    if( $usuario['email'] == $email &&  $usuario['contraseña'] == $contraseña ){
 	    	$_SESSION['usuario'] = $usuario['usuario'];
 	    	$_SESSION['login'] = "si";
-	    	$_SESSION['tipousuario'] = $usuario['rol'];   	    	
+	    	$_SESSION['tipousuario'] = $usuario['rol'];
+
+		    	$carritoprod = $loginUsuario->productosCarrito($usuario['usuario']);
+		    	if($carritoprod){
+		    		$_SESSION['carrito'] = $carritoprod;
+		    	}    	
+
 	    	header('Location: index.php');
 	    }elseif($usuario['email'] == $email &&  $usuario['contraseña'] != $contraseña){
 			echo $_SESSION['error1'] = "Por favor verificar los datos ingresados";
