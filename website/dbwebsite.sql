@@ -3,21 +3,6 @@ SQLyog Ultimate v11.11 (32 bit)
 MySQL - 5.5.5-10.1.28-MariaDB : Database - dbwebsite
 *********************************************************************
 */
-
-/*!40101 SET NAMES utf8 */;
-
-/*!40101 SET SQL_MODE=''*/;
-
-/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
-/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
-/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
-/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
-CREATE DATABASE /*!32312 IF NOT EXISTS*/`dbwebsite` /*!40100 DEFAULT CHARACTER SET latin1 */;
-
-USE `dbwebsite`;
-
-/*Table structure for table `carro` */
-
 DROP TABLE IF EXISTS `carro`;
 
 CREATE TABLE `carro` (
@@ -97,7 +82,3 @@ CREATE TABLE `registro` (
 
 insert  into `registro`(`usuario`,`contraseña`,`primer_nombre`,`segundo_nombre`,`primer_apellido`,`segundo_apellido`,`email`,`fecha`,`rol`) values ('Thioalejo','123','alejo','alejo','alejo','alejo','alejo.saraza@gmail.com','2018-11-13 17:04:41','admin'),('alejo','1123','alejandro','jhonny','sanchez','botero','alejo@hotmail.com','2018-11-13 17:00:22','user'),('j2','123','david','david','david','david','david@gmail.com','2018-11-13 17:04:08','user');
 
-/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
-/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
-/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
-/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
